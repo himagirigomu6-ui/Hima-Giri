@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Andhra - Temple Tourism</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="temple.js"></script>
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     SIGN UP
+================================================== -->
+
+<div id="signupPage" class="auth-page">
+
+    <div class="auth-box">
+
+        <div class="auth-logo">🛕</div>
+
+        <h1>Divine Andhra</h1>
+
+        <p class="auth-subtitle">
+            Create your account and begin your spiritual journey
+        </p>
+
+        <label>Full Name</label>
+
+        <input
+            id="signupName"
+            type="text"
+            placeholder="Enter your full name">
+
+        <label>Email</label>
+
+        <input
+            id="signupEmail"
+            type="email"
+            placeholder="Enter your email">
+
+        <label>Password</label>
+
+        <input
+            id="signupPassword"
+            type="password"
+            placeholder="Create password">
+
+        <label>Confirm Password</label>
+
+        <input
+            id="signupConfirm"
+            type="password"
+            placeholder="Confirm password">
+
+        <button
+            class="auth-button"
+            onclick="signup()">
+
+            CREATE ACCOUNT
+
+        </button>
+
+        <div id="signupMessage" class="message"></div>
+
+        <div class="auth-link" onclick="showLogin()">
+            Already have an account? Login
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     LOGIN
+================================================== -->
+
+<div id="loginPage" class="auth-page" style="display:none;">
+
+    <div class="auth-box">
+
+        <div class="auth-logo">🛕</div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="auth-subtitle">
+            Login to explore Andhra Pradesh temples
+        </p>
+
+        <label>Email</label>
+
+        <input
+            id="loginEmail"
+            type="email"
+            placeholder="Enter your email">
+
+        <label>Password</label>
+
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Enter your password">
+
+        <button
+            class="auth-button"
+            onclick="login()">
+
+            LOGIN
+
+        </button>
+
+        <div id="loginMessage" class="message"></div>
+
+        <div class="auth-link" onclick="showSignup()">
+            Create a new account
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     MAIN WEBSITE
+================================================== -->
+
+<div id="website" style="display:none;">
+
+<nav class="navbar">
+
+    <div class="logo">
+        🛕 Divine <span>Andhra</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <button class="active"
+            onclick="openPage('home',this)">
+                Home
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('temples',this)">
+                Temples
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('festivals',this)">
+                Festivals
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('specialties',this)">
+                Specialties
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('map',this)">
+                Map
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('guide',this)">
+                Guide
+            </button>
+        </li>
+
+        <li>
+            <button
+            onclick="openPage('contact',this)">
+                Contact
+            </button>
+        </li>
+
+        <li>
+            <button
+            class="logout"
+            onclick="logout()">
+                Logout
+            </button>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="page active">
+
+    <div class="home">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="small-title">
+                    A JOURNEY THROUGH DIVINITY
+                </div>
+
+                <h1>
+                    Discover the
+                    <br>
+                    <span>Sacred Soul</span>
+                    <br>
+                    of Andhra Pradesh
+                </h1>
+
+                <p>
+                    Walk through ancient temples, experience
+                    timeless festivals, taste traditional prasadam
+                    and discover the spiritual heritage of
+                    Andhra Pradesh.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        onclick="openTemplePage()">
+
+                        EXPLORE TEMPLES →
+
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="openPageById('festivals')">
+
+                        DISCOVER FESTIVALS
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="home-features">
+
+            <div class="section-title">
+
+                <div class="small-title">
+                    WHY VISIT
+                </div>
+
+                <h2>
+                    A Journey Beyond Travel
+                </h2>
+
+                <p>
+                    Discover devotion, culture and beauty.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🛕
+                    </div>
+
+                    <h3>
+                        Sacred Temples
+                    </h3>
+
+                    <p>
+                        Explore magnificent temples
+                        across Andhra Pradesh.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🎉
+                    </div>
+
+                    <h3>
+                        Festivals
+                    </h3>
+
+                    <p>
+                        Experience colorful celebrations
+                        and temple traditions.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🍛
+                    </div>
+
+                    <h3>
+                        Traditional Food
+                    </h3>
+
+                    <p>
+                        Taste authentic Andhra flavors
+                        and temple prasadam.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Easy Exploration
+                    </h3>
+
+                    <p>
+                        Find temples and plan your
+                        spiritual journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEMPLES ================= -->
+
+<section id="temples" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                SACRED DESTINATIONS
+            </div>
+
+            <h1>
+                Temples of
+                <span>Andhra Pradesh</span>
+            </h1>
+
+            <p>
+                Discover beautiful temples from Paderu,
+                Vizag, Godavari, Vijayawada and beyond.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dark-content">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                EXPLORE
+            </div>
+
+            <h2>
+                Sacred Temple Collection
+            </h2>
+
+            <p>
+                Click any temple card to see complete details.
+            </p>
+
+        </div>
+
+
+        <div class="search">
+
+            <input
+                id="templeSearch"
+                type="text"
+                placeholder="🔍 Search temples..."
+                onkeyup="searchTemples()">
+
+        </div>
+
+
+        <div class="filters">
+
+            <button
+                class="filter active"
+                onclick="filterTemples('all',this)">
+                All
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterTemples('paderu',this)">
+                Paderu
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterTemples('vizag',this)">
+                Vizag
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterTemples('godavari',this)">
+                Godavari
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterTemples('vijayawada',this)">
+                Vijayawada
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterTemples('other',this)">
+                Other
+            </button>
+
+        </div>
+
+
+        <div class="temple-grid">
+
+
+            <!-- 1 -->
+
+            <div
+                class="temple-card"
+                data-category="paderu"
+                data-name="modakondamma paderu"
+                onclick="showDetail(
+                'Modakondamma Temple - Paderu',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ55XGGJGQqfXf7KpGZEvgJmwY9AoCHqb9uDFOzoYS6Sou5W8b_CQgGfg&s=10',
+                'Modakondamma Temple is a spiritual destination in the Paderu region connected with local traditions and devotion. Visitors can experience the peaceful atmosphere and cultural character of the surrounding area.',
+                'Paderu, Andhra Pradesh',
+                'Goddess Modakondamma',
+                'Spiritual and cultural destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://feeds.abplive.com/onecms/images/uploaded-images/2025/05/06/6ebd6e5380409d90f8874fa20cd7f6a01746521448347217_original.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Modakondamma Temple
+                    </h3>
+
+                    <p>
+                        A peaceful spiritual destination
+                        surrounded by the beauty of Paderu.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div
+                class="temple-card"
+                data-category="godavari"
+                data-name="annavaram satyanarayana"
+                onclick="showDetail(
+                'Annavaram Sri Satyanarayana Swamy Temple',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5SzYP0wNTSBLTouQuSWd7EYlGDSUVNayKTp2hTUg51dl2CEygPfLROZKS&s=10',
+                'Annavaram is a renowned pilgrimage destination associated with Sri Veera Venkata Satyanarayana Swamy. Devotees visit the temple for worship and traditional ceremonies.',
+                'Annavaram, Andhra Pradesh',
+                'Lord Sri Veera Venkata Satyanarayana Swamy',
+                'Major pilgrimage destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRfcSVdbT47248a8WoxeEWef9sbURsutaECKf1EKI8pPu2gAvFY4DynBY&s=10">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Annavaram Temple
+                    </h3>
+
+                    <p>
+                        A beautiful pilgrimage destination
+                        known for Satyanarayana worship.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div
+                class="temple-card"
+                data-category="godavari"
+                data-name="draksharamam bhimeswara"
+                onclick="showDetail(
+                'Draksharamam Bhimeswara Swamy Temple',
+                'https:tklvch.wordpress.com/wp-content/uploads/2016/05/42498045.jpg',
+                'Draksharamam is a historic temple destination associated with Lord Bhimeswara. The temple is known for traditional architecture, religious significance and peaceful surroundings.',
+                'Draksharamam, Andhra Pradesh',
+                'Lord Bhimeswara / Shiva',
+                'Historic Shaiva pilgrimage destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://dakshinapatha.com/wp-content/uploads/2020/06/bhimeswara.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Draksharamam
+                    </h3>
+
+                    <p>
+                        Historic temple architecture
+                        and spiritual atmosphere.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div
+                class="temple-card"
+                data-category="other"
+                data-name="thanthekonda temple"
+                onclick="showDetail(
+                'Thanthekonda Temple',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVHvr6qyHpKKB6XbHO38AYrr8lyJhvpeXQ1l8dqpumvrqh_lVnFMYk13o&s=10',
+                'Thanthekonda is included in this tourism circuit as a spiritual destination. Visitors can enjoy the temple atmosphere and learn about local traditions.',
+                'Andhra Pradesh',
+                'Temple worship and local traditions',
+                'Local spiritual destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVHvr6qyHpKKB6XbHO38AYrr8lyJhvpeXQ1l8dqpumvrqh_lVnFMYk13o&s=10">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Thanthekonda
+                    </h3>
+
+                    <p>
+                        A peaceful destination for
+                        spiritual exploration.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div
+                class="temple-card"
+                data-category="godavari"
+                data-name="vadapalli venkateswara"
+                onclick="showDetail(
+                'Vadapalli Venkateswara Swamy Temple',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63Rc5drFbo9eRAnKkjUFxbjDwRRr2udrPRobsed6Icw&s=10',
+                'Vadapalli Venkateswara Swamy Temple is a pilgrimage destination associated with Lord Venkateswara. The temple attracts devotees seeking a peaceful spiritual experience.',
+                'Vadapalli, Andhra Pradesh',
+                'Lord Venkateswara',
+                'Regional pilgrimage destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcnUxuAqiWpvA6pQ3Mt_LeftXvK-GquHTyeu9Rxzhe-MjC6GtG97YIoEk3oT0rKtBiScvx6_hLDRefCIKiO9rJRHanoTNopAs3ZtFeLDJVzmQOf1xgGSQLpMzDWUGik7fJn8KJbED9RAAtBbWcHl8MrwEKoiNbzTcDq-Ip-AEZXsYweZDlzye46dRAgr4j/w1200-h630-p-k-no-nu/vadapalli%20sri%20venkateswara%20swamy%20temple.png">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Vadapalli Temple
+                    </h3>
+
+                    <p>
+                        A serene Venkateswara Swamy
+                        pilgrimage destination.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6 -->
+
+            <div
+                class="temple-card"
+                data-category="godavari"
+                data-name="talupulamma lova"
+                onclick="showDetail(
+                'Talupulamma Lova',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlRqOP_d1PnkSNaZnsJI3P5VkNYtEY3-5__1zdt8TPTLclmv-WF3KDKXg&s=10',
+                'Talupulamma Lova combines spiritual experience with beautiful natural surroundings. The destination is associated with Talupulamma Thalli and is surrounded by hills.',
+                'Lova, Andhra Pradesh',
+                'Talupulamma Thalli',
+                'Temple and nature destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://www.sakshi.com/gallery_images/2025/05/6/Talupulamma%20Lova%20Temple%20in%20Kakinada%20district%20_%20%284%29.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        TalupulammaLova Temple
+                    </h3>
+
+                    <p>
+                        A spiritual destination surrounded
+                        by beautiful hills and nature.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 7 -->
+
+            <div
+                class="temple-card"
+                data-category="vijayawada"
+                data-name="kanaka durga vijayawada"
+                onclick="showDetail(
+                'Kanaka Durga Temple - Vijayawada',
+                'https:temple.yatradham.org/public/Product/temple/temple_TK2izxaD_202408131438520.jpg',
+                'Kanaka Durga Temple is a famous temple in Vijayawada located on Indrakeeladri Hill. It is associated with Goddess Kanaka Durga and is an important pilgrimage destination.',
+                'Vijayawada, Andhra Pradesh',
+                'Goddess Kanaka Durga',
+                'Major Vijayawada pilgrimage centre'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://godavaripushkaralu.co.in/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-18-at-10.54.27-PM.jpeg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Kanaka Durga Temple
+                    </h3>
+
+                    <p>
+                        A magnificent temple overlooking
+                        the Krishna River region.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 8 -->
+
+            <div
+                class="temple-card"
+                data-category="vizag"
+                data-name="simhachalam vizag"
+                onclick="showDetail(
+                'Simhachalam Temple - Vizag',
+                'https:cdn.abhibus.com/2024/04/simhachalam-Temple.jpg',
+                'Simhachalam Temple is a historic temple near Visakhapatnam associated with Lord Narasimha. Visitors can experience traditional architecture and religious practices.',
+                'Simhachalam, Visakhapatnam, Andhra Pradesh',
+                'Lord Narasimha',
+                'Historic temple near Vizag'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9E_N3vj-e3OkQHj0sOj3eY3ccO0F9vCDcm3PS_c9oricso-0HfRp7RgY&s=10">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Simhachalam Temple
+                    </h3>
+
+                    <p>
+                        Historic Narasimha temple
+                        near Visakhapatnam.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 9 -->
+
+            <div
+                class="temple-card"
+                data-category="vizag"
+                data-name="sampath vinayaka vizag"
+                onclick="showDetail(
+                'Sampath Vinayaka Temple - Vizag',
+                'https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1sPoXxDYP8FlsLXhvpo0utoo7wkBfmrGazcfdqC1oa1vnYDW4KxMUIoe&s=10',
+                'Sampath Vinayaka Temple is a popular devotional destination in Visakhapatnam associated with Lord Ganesha.',
+                'Visakhapatnam, Andhra Pradesh',
+                'Lord Ganesha',
+                'Popular devotional destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLou8uigIkBuSjoyGbtD54vrSWavD8QaLM-8ZbNJ14jPsOiblKEkq_W2s&s=10">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Sampath Vinayaka Temple
+                    </h3>
+
+                    <p>
+                        Popular Ganesha temple
+                        in Visakhapatnam.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 10 -->
+
+            <div
+                class="temple-card"
+                data-category="vizag"
+                data-name="kanaka mahalakshmi vizag"
+                onclick="showDetail(
+                'Kanaka Maha Lakshmi Temple - Vizag',
+                'https:images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=90',
+                'Kanaka Maha Lakshmi Temple is a devotional destination in Visakhapatnam associated with Goddess Kanaka Maha Lakshmi.',
+                'Visakhapatnam, Andhra Pradesh',
+                'Goddess Kanaka Maha Lakshmi',
+                'Important devotional destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=90">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Kanaka Maha Lakshmi
+                    </h3>
+
+                    <p>
+                        A beautiful devotional
+                        destination in Vizag.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 11 -->
+
+            <div
+                class="temple-card"
+                data-category="other"
+                data-name="tirumala venkateswara"
+                onclick="showDetail(
+                'Tirumala Venkateswara Temple',
+                'https:commons.wikimedia.org/wiki/Special:Redirect/file/Tirumala%20Temple%20989.jpg',
+                'Tirumala Venkateswara Temple is one of the best-known pilgrimage destinations in Andhra Pradesh. Located in the Tirumala hills, the temple attracts devotees from many places.',
+                'Tirumala, Tirupati, Andhra Pradesh',
+                'Lord Venkateswara',
+                'Major pilgrimage destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.jansatta.com/2026/06/Tirumala-Venkateswara-Temple.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Tirumala Temple
+                    </h3>
+
+                    <p>
+                        The magnificent Venkateswara
+                        pilgrimage destination.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 12 -->
+
+            <div
+                class="temple-card"
+                data-category="other"
+                data-name="srisailam mallikarjuna"
+                onclick="showDetail(
+                'Srisailam Mallikarjuna Temple',
+                'https:www.bloggymaster.com/wp-content/uploads/2026/05/srisailam-temple-history-ancient-architecture.webp',
+                'Srisailam is a major pilgrimage destination associated with Lord Mallikarjuna and Goddess Bhramaramba. The destination combines spirituality with beautiful natural surroundings.',
+                'Srisailam, Andhra Pradesh',
+                'Lord Mallikarjuna and Goddess Bhramaramba',
+                'Major pilgrimage destination'
+                )">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://orgoveda.com/wp-content/uploads/2026/04/Srisailam-Temple.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Srisailam Temple
+                    </h3>
+
+                    <p>
+                        A spiritual destination surrounded
+                        by natural beauty.
+                    </p>
+
+                    <span class="details">
+                        DISCOVER DETAILS →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FESTIVALS ================= -->
+
+<section id="festivals" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                CELEBRATION • DEVOTION • CULTURE
+            </div>
+
+            <h1>
+                Sacred <span>Festivals</span>
+            </h1>
+
+            <p>
+                Experience colorful celebrations and
+                temple traditions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dark-content">
+
+        <div class="section-title">
+
+            <h2>
+                Celebrate the Divine
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://www.india-tours.com/images/festivals/brahmotsavam-festival/brahmotsavam-festival1.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Brahmotsavam
+                    </h3>
+
+                    <p>
+                        A grand temple celebration
+                        featuring rituals, decorations
+                        and traditional processions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-K6AphwaspRXEY8cINFsIHioAwplrpXxJYVLFMhF_A&s=10">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Dasara
+                    </h3>
+
+                    <p>
+                        A colorful festival season filled
+                        with devotion and cultural traditions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://cdn.britannica.com/67/269167-050-B4A8ED78/Hindu-priests-perform-Aarati-Maha-Shivratri-festival-shiva-Pashupatinath-Temple-Kathmandu-Nepal.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Maha Shivaratri
+                    </h3>
+
+                    <p>
+                        A major festival dedicated to
+                        Lord Shiva and temple worship.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SPECIALTIES ================= -->
+
+<section id="specialties" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                TASTE • TRADITION • PRASADAM
+            </div>
+
+            <h1>
+                Flavours of <span>Andhra</span>
+            </h1>
+
+            <p>
+                Discover traditional food and famous temple prasadam.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dark-content">
+
+        <div class="section-title">
+
+            <h2>
+                Taste the Tradition
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.firstpost.com/uploads/2026/08/WhatsApp-Image-2026-08-05-at-3.36.32-PM-2026-08-ea67a067983e0695ac4bc3f15d410cd3-1200x675.jpeg?im=Resize,width=720,aspect=fit,type=normal">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Tirupati Laddu
+                    </h3>
+
+                    <p>
+                        A famous prasadam associated
+                        with the Tirumala temple tradition.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://www.blendwithspices.com/wp-content/uploads/2014/04/aava-pettina-pulihora.jpg">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Pulihora
+                    </h3>
+
+                    <p>
+                        A traditional tangy rice preparation
+                        enjoyed during festive meals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://media.andhrajyothy.com/media/2024/20241029/Untitled_1_3fc2e15cd9_v_gif.webp">
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Annavaram prasadam
+                    </h3>
+
+                    <p>
+                        A traditional rice-based dish
+                        enjoyed during celebrations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAP ================= -->
+
+<section id="map" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                PLAN YOUR JOURNEY
+            </div>
+
+            <h1>
+                Explore the <span>Temple Map</span>
+            </h1>
+
+            <p>
+                Find spiritual destinations across Andhra Pradesh.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="map-area">
+
+        <div class="map-box">
+
+            <div class="icon">
+                📍
+            </div>
+
+            <h2>
+                Discover Temple Locations
+            </h2>
+
+            <p>
+                Explore temples around Paderu, Vizag,
+                Annavaram, Draksharamam, Lova,
+                Vijayawada and other destinations.
+            </p>
+
+            <button
+                class="primary-btn"
+                onclick="openMap()">
+
+                OPEN GOOGLE MAPS →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GUIDE ================= -->
+
+<section id="guide" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                TRAVEL SUPPORT
+            </div>
+
+            <h1>
+                Your Temple <span>Guide</span>
+            </h1>
+
+            <p>
+                Make your spiritual journey comfortable and memorable.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="form-area"
+        style="
+        background-image:
+        url('https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=2200&q=90');
+        ">
+
+        <div class="form-card">
+
+            <h2>
+                👨‍🏫 Book a Guide
+            </h2>
+
+            <p>
+                Enter your details to request a temple guide.
+            </p>
+
+            <input
+                id="guideName"
+                type="text"
+                placeholder="Your Name">
+
+            <input
+                id="guidePhone"
+                type="tel"
+                placeholder="Phone Number">
+
+            <input
+                id="guideDate"
+                type="date">
+
+            <button
+                class="primary-btn"
+                onclick="bookGuide()">
+
+                REQUEST GUIDE
+
+            </button>
+
+            <div
+                id="guideMessage"
+                class="message">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="page">
+
+    <div class="inner-hero">
+
+        <div class="inner-content">
+
+            <div class="small-title">
+                CONNECT WITH US
+            </div>
+
+            <h1>
+                Contact <span>Divine Andhra</span>
+            </h1>
+
+            <p>
+                Have a question? Send us a message.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="form-area"
+        style="
+        background-image:
+        url('https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=2200&q=90');
+        ">
+
+        <div class="form-card">
+
+            <h2>
+                📞 Get in Touch
+            </h2>
+
+            <p>
+                We would love to hear from you.
+            </p>
+
+            <input
+                id="contactName"
+                type="text"
+                placeholder="Your Name">
+
+            <input
+                id="contactEmail"
+                type="email"
+                placeholder="Your Email">
+
+            <textarea
+                id="contactText"
+                placeholder="Write your message..."></textarea>
+
+            <button
+                class="primary-btn"
+                onclick="sendMessage()">
+
+                SEND MESSAGE
+
+            </button>
+
+            <div
+                id="contactMessage"
+                class="message">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>
+        🛕 Divine Andhra
+    </h2>
+
+    <p>
+        A journey through the sacred soul of Andhra Pradesh.
+    </p>
+
+    <p>
+        Paderu • Annavaram • Draksharamam •
+        Vadapalli • Lova • Vijayawada • Vizag • Tirumala
+    </p>
+
+    <p>
+        © 2026 Divine Andhra Temple Tourism
+    </p>
+
+</footer>
+
+</div>
+
+
+<!-- ==================================================
+     TEMPLE DETAIL PAGE
+================================================== -->
+
+<div id="detailPage">
+
+    <div
+        id="detailHero"
+        class="detail-hero">
+
+        <button
+            class="back-btn"
+            onclick="backToTemples()">
+
+            ← Back to Temples
+
+        </button>
+
+
+        <div class="detail-title">
+
+            <div class="small-title">
+                SACRED DESTINATION
+            </div>
+
+            <h1 id="detailTitle"></h1>
+
+            <p id="detailShort"></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="detail-content">
+
+        <h2>
+            About This Temple
+        </h2>
+
+        <p id="detailDescription"></p>
+
+
+        <div class="detail-grid">
+
+            <div class="detail-box">
+
+                <div class="icon">
+                    📍
+                </div>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p id="detailLocation"></p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <div class="icon">
+                    🙏
+                </div>
+
+                <h3>
+                    Deity / Specialty
+                </h3>
+
+                <p id="detailSpecialty"></p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <div class="icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Importance
+                </h3>
+
+                <p id="detailImportance"></p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <div class="icon">
+                    📸
+                </div>
+
+                <h3>
+                    Experience
+                </h3>
+
+                <p>
+                    Explore architecture, worship,
+                    traditions and local culture.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <h3>
+                ✨ Spiritual Experience
+            </h3>
+
+            <p id="detailExperience"></p>
+
+        </div>
+
+
+        <h2>
+            🌸 Discover More
+        </h2>
+
+        <p id="detailMore"></p>
+
+
+        <div class="highlight">
+
+            <h3>
+                🙏 Visitor Experience
+            </h3>
+
+            <p>
+                Visitors can explore the temple atmosphere,
+                learn about traditions, enjoy nearby attractions
+                and experience the cultural heritage of the region.
+                Please respect local customs and temple guidelines.
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="backToTemples()">
+
+            ← BACK TO TEMPLES
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     GUIDE RECEIPT PAGE
+================================================== -->
+
+<div id="receiptPage">
+
+    <div class="receipt-box">
+
+        <div class="receipt-icon">
+            🛕
+        </div>
+
+        <h1>
+            Divine Andhra
+        </h1>
+
+        <p class="subtitle">
+            Temple Tourism Guide Booking
+        </p>
+
+
+        <div class="success">
+            ✓
+        </div>
+
+
+        <h2>
+            Booking Confirmed!
+        </h2>
+
+        <p class="subtitle">
+            Your guide request has been successfully submitted.
+        </p>
+
+
+        <div class="receipt-line"></div>
+
+
+        <div class="receipt-details">
+
+            <div class="receipt-row">
+
+                <span>
+                    Booking ID
+                </span>
+
+                <strong id="receiptId"></strong>
+
+            </div>
+
+
+            <div class="receipt-row">
+
+                <span>
+                    Name
+                </span>
+
+                <strong id="receiptName"></strong>
+
+            </div>
+
+
+            <div class="receipt-row">
+
+                <span>
+                    Phone
+                </span>
+
+                <strong id="receiptPhone"></strong>
+
+            </div>
+
+
+            <div class="receipt-row">
+
+                <span>
+                    Guide Date
+                </span>
+
+                <strong id="receiptDate"></strong>
+
+            </div>
+
+
+            <div class="receipt-row">
+
+                <span>
+                    Service
+                </span>
+
+                <strong>
+                    Temple Guide
+                </strong>
+
+            </div>
+
+
+            <div class="receipt-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="confirmed">
+                    CONFIRMED
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="receipt-note">
+
+            🙏 Thank you for choosing
+            <b>Divine Andhra</b>.
+
+            <br>
+
+            We wish you a beautiful spiritual journey.
+
+        </div>
+
+
+        <div class="receipt-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="printReceipt()">
+
+                🖨️ PRINT RECEIPT
+
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="closeReceipt()">
+
+                ← BACK TO WEBSITE
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+
+</script>
+
+</body>
+</html>

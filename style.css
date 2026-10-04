@@ -1,0 +1,1051 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#100806;
+    color:white;
+}
+
+button,input,textarea{
+    font-family:Poppins,sans-serif;
+}
+
+button{
+    cursor:pointer;
+}
+
+.page{
+    display:none;
+    min-height:100vh;
+}
+
+.page.active{
+    display:block;
+}
+
+
+/* ================= AUTH ================= */
+
+.auth-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+
+    background:
+    linear-gradient(rgba(15,5,2,.65),rgba(15,5,2,.85)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tirumala%20Temple%20989.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.auth-box{
+    width:430px;
+    max-width:100%;
+    padding:42px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.auth-logo{
+    text-align:center;
+    font-size:50px;
+}
+
+.auth-box h1{
+    text-align:center;
+    font-family:Cinzel,serif;
+    color:#f4c85f;
+    margin:8px 0;
+}
+
+.auth-subtitle{
+    text-align:center;
+    color:#ddd;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.auth-box label{
+    display:block;
+    font-size:13px;
+    margin:12px 0 6px;
+}
+
+.auth-box input{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(0,0,0,.25);
+    color:white;
+    outline:none;
+}
+
+.auth-box input::placeholder{
+    color:#aaa;
+}
+
+.auth-button{
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#f5d06b,#b67518);
+
+    color:#241006;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.auth-button:hover{
+    transform:translateY(-3px);
+}
+
+.auth-link{
+    text-align:center;
+    color:#f5cd63;
+    margin-top:18px;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.message{
+    text-align:center;
+    margin-top:12px;
+    font-size:13px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    min-height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:10px 5%;
+
+    background:rgba(18,7,4,.93);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(243,198,91,.25);
+}
+
+.logo{
+    font-family:Cinzel,serif;
+    font-size:21px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#f4c85f;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:4px;
+}
+
+.nav-links button{
+    border:none;
+    background:transparent;
+    color:#eee;
+    padding:9px 11px;
+    border-radius:9px;
+    font-size:11px;
+}
+
+.nav-links button:hover,
+.nav-links button.active{
+    background:#efbd4e;
+    color:#241006;
+}
+
+.nav-links .logout{
+    background:#a52e28;
+    color:white;
+}
+
+
+/* ================= HOME ================= */
+
+.home{
+    min-height:100vh;
+
+    background:
+    linear-gradient(90deg,rgba(8,3,1,.85),rgba(8,3,1,.35),rgba(8,3,1,.7)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tirumala%20Temple%20989.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:130px 8% 70px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.small-title{
+    color:#f4c85f;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Cinzel,serif;
+    font-size:clamp(45px,7vw,85px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#f3c65c;
+}
+
+.hero p{
+    max-width:700px;
+    line-height:1.9;
+    color:#eee;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:14px 23px;
+    border-radius:30px;
+    font-weight:bold;
+    border:none;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:#efbd4e;
+    color:#241006;
+}
+
+.secondary-btn{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-4px);
+}
+
+
+/* ================= HOME FEATURES ================= */
+
+.home-features{
+    padding:90px 7%;
+
+    background:
+    linear-gradient(rgba(24,9,4,.95),rgba(18,7,4,.98)),
+    url("https://images.unsplash.com/photo-1600100397608-f010c8f4c6f6?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-family:Cinzel,serif;
+    font-size:40px;
+    color:#f3c55e;
+}
+
+.section-title p{
+    color:#aaa;
+    font-size:13px;
+    margin-top:10px;
+}
+
+.feature-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    padding:35px 22px;
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+    border-color:#e6b64d;
+}
+
+.feature-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.feature-card h3{
+    font-family:Cinzel,serif;
+    color:#f2c45d;
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* ================= INNER HERO ================= */
+
+.inner-hero{
+    min-height:580px;
+    padding:140px 7% 80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    position:relative;
+}
+
+.inner-hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(8,3,1,.35),rgba(8,3,1,.8));
+}
+
+.inner-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.inner-content h1{
+    font-family:Cinzel,serif;
+    font-size:clamp(45px,6vw,75px);
+}
+
+.inner-content h1 span{
+    color:#f3c45d;
+}
+
+.inner-content p{
+    color:#ddd;
+    line-height:1.9;
+    margin-top:15px;
+}
+
+
+/* ================= BACKGROUNDS ================= */
+
+#temples .inner-hero{
+    background-image:
+    url("https://media.istockphoto.com/id/467437354/photo/the-1300-year-old-kailasanathar-hindu-temple-built-by-the-pallava-king-narasimhavarman-ii.jpg?s=612x612&w=0&k=20&c=XvIhagnI1uQZSDDyKxflSIJMQFtrREjDwAXAMwF9aqg=");
+}
+
+#festivals .inner-hero{
+    background-image:
+    url("https://archyam.com/cdn/shop/articles/Rath_Yatra_662cb21c-9d4f-4dbb-8c91-1acdc3d6850f.webp?crop=center&height=1200&v=1771861191&width=1200");
+}
+
+#specialties .inner-hero{
+    background-image:
+    url("https://t4.ftcdn.net/jpg/21/98/36/07/360_F_2198360779_IcUzci1cTtYxCi4FZXMyoYRRhaMeFTU9.jpg");
+}
+
+#map .inner-hero{
+    background-image:
+    url("https://media.istockphoto.com/id/2205587341/photo/hindu-temple-against-blue-sky.jpg?s=612x612&w=0&k=20&c=yMYGEmgp00ECGpL6yPPngU5xTiWURiPiA3PvqA9L-_o=");
+}
+
+#guide .inner-hero{
+    background-image:
+    url("https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=2200&q=90");
+}
+
+#contact .inner-hero{
+    background-image:
+    url("https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=2200&q=90");
+}
+
+
+/* ================= CONTENT ================= */
+
+.dark-content{
+    padding:90px 7%;
+
+    background:
+    linear-gradient(rgba(18,6,3,.96),rgba(25,8,4,.98));
+}
+
+
+/* ================= SEARCH ================= */
+
+.search{
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.search input{
+    width:100%;
+    padding:17px 22px;
+    border-radius:40px;
+    border:1px solid rgba(243,198,91,.3);
+    background:rgba(255,255,255,.08);
+    color:white;
+    outline:none;
+}
+
+
+/* ================= FILTER ================= */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:40px;
+}
+
+.filter{
+    padding:9px 17px;
+    border-radius:30px;
+    border:1px solid rgba(243,198,91,.3);
+    background:rgba(255,255,255,.05);
+    color:#ddd;
+}
+
+.filter.active,
+.filter:hover{
+    background:#e9b94f;
+    color:#211006;
+}
+
+
+/* ================= TEMPLE CARDS ================= */
+
+.temple-grid,
+.info-grid{
+    max-width:1250px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+.temple-card,
+.info-card{
+    overflow:hidden;
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.temple-card:hover,
+.info-card:hover{
+    transform:translateY(-10px);
+    border-color:#e3b34d;
+    box-shadow:0 25px 55px rgba(0,0,0,.45);
+}
+
+.card-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.temple-card:hover img,
+.info-card:hover img{
+    transform:scale(1.1);
+}
+
+.card-body{
+    padding:24px;
+}
+
+.card-body h3{
+    font-family:Cinzel,serif;
+    color:#f2c45d;
+    margin-bottom:10px;
+}
+
+.card-body p{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.details{
+    display:inline-block;
+    margin-top:15px;
+    color:#f3c45d;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* ================= FORM ================= */
+
+.form-area{
+    min-height:650px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:100px 7%;
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    position:relative;
+}
+
+.form-area:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(8,3,1,.72);
+}
+
+.form-card{
+    position:relative;
+    z-index:2;
+
+    width:650px;
+    max-width:100%;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(20,8,4,.75);
+
+    border:1px solid rgba(243,198,91,.25);
+
+    backdrop-filter:blur(22px);
+}
+
+.form-card h2{
+    font-family:Cinzel,serif;
+    color:#f3c55e;
+    margin-bottom:8px;
+}
+
+.form-card p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.form-card input,
+.form-card textarea{
+    width:100%;
+    padding:15px;
+    margin:7px 0;
+
+    border-radius:11px;
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.07);
+
+    color:white;
+    outline:none;
+}
+
+.form-card textarea{
+    height:140px;
+    resize:vertical;
+}
+
+
+/* ================= MAP ================= */
+
+.map-area{
+    min-height:600px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 7%;
+
+    background:
+    linear-gradient(rgba(8,3,1,.7),rgba(8,3,1,.9)),
+    url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.map-box{
+    max-width:800px;
+    width:100%;
+    padding:60px 35px;
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(15,7,4,.7);
+    border:1px solid rgba(243,198,91,.25);
+
+    backdrop-filter:blur(20px);
+}
+
+.map-box .icon{
+    font-size:60px;
+}
+
+.map-box h2{
+    font-family:Cinzel,serif;
+    color:#f2c55e;
+    margin:15px 0;
+}
+
+
+/* ================= DETAIL PAGE ================= */
+
+#detailPage{
+    display:none;
+    min-height:100vh;
+    background:#120705;
+}
+
+.detail-hero{
+    min-height:650px;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:100px 8% 80px;
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    position:relative;
+}
+
+.detail-hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 20%,rgba(8,3,1,.95));
+}
+
+.back-btn{
+    position:absolute;
+    top:100px;
+    left:5%;
+    z-index:5;
+
+    padding:11px 18px;
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:30px;
+
+    background:rgba(0,0,0,.4);
+    color:white;
+}
+
+.detail-title{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.detail-title h1{
+    font-family:Cinzel,serif;
+    font-size:clamp(42px,6vw,75px);
+}
+
+.detail-title p{
+    max-width:750px;
+    color:#ddd;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+.detail-content{
+    max-width:1150px;
+    margin:auto;
+    padding:80px 7%;
+}
+
+.detail-content h2{
+    font-family:Cinzel,serif;
+    color:#f2c45c;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.detail-content > p{
+    color:#bbb;
+    line-height:2;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin:35px 0;
+}
+
+.detail-box{
+    padding:28px;
+    border-radius:20px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.detail-box .icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.detail-box h3{
+    color:#f2c45d;
+    margin-bottom:7px;
+}
+
+.detail-box p{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.highlight{
+    margin:30px 0;
+    padding:28px;
+    border-left:4px solid #e6b84c;
+    border-radius:15px;
+    background:rgba(230,184,76,.07);
+}
+
+.highlight h3{
+    color:#f2c45d;
+    margin-bottom:8px;
+}
+
+.highlight p{
+    color:#bbb;
+    line-height:1.8;
+}
+
+
+/* ================= RECEIPT ================= */
+
+#receiptPage{
+    display:none;
+
+    min-height:100vh;
+
+    padding:100px 20px;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(15,5,2,.7),rgba(15,5,2,.92)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tirumala%20Temple%20989.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.receipt-box{
+    width:650px;
+    max-width:100%;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.1);
+
+    border:1px solid rgba(243,198,91,.4);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.receipt-icon{
+    font-size:55px;
+}
+
+.receipt-box h1{
+    font-family:Cinzel,serif;
+    color:#f4c85f;
+}
+
+.receipt-box .subtitle{
+    color:#aaa;
+    font-size:13px;
+}
+
+.success{
+    width:70px;
+    height:70px;
+
+    margin:25px auto 15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#28a745;
+
+    font-size:35px;
+    font-weight:bold;
+
+    box-shadow:0 0 30px rgba(40,167,69,.4);
+}
+
+.receipt-box h2{
+    color:#f4ca63;
+    font-family:Cinzel,serif;
+}
+
+.receipt-line{
+    height:1px;
+    background:rgba(243,198,91,.3);
+    margin:28px 0;
+}
+
+.receipt-details{
+    text-align:left;
+}
+
+.receipt-row{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    gap:20px;
+}
+
+.receipt-row span{
+    color:#aaa;
+    font-size:13px;
+}
+
+.receipt-row strong{
+    color:white;
+    font-size:13px;
+    text-align:right;
+}
+
+.confirmed{
+    color:#6df28c !important;
+}
+
+.receipt-note{
+    margin-top:25px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(243,198,91,.08);
+    color:#bbb;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.receipt-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:55px 7%;
+    text-align:center;
+    background:#100503;
+    border-top:1px solid rgba(243,198,91,.2);
+}
+
+footer h2{
+    font-family:Cinzel,serif;
+    color:#f3c55e;
+}
+
+footer p{
+    color:#888;
+    font-size:12px;
+    margin-top:8px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1050px){
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:8px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        position:relative;
+    }
+
+    .hero{
+        padding-top:70px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .inner-hero{
+        min-height:500px;
+    }
+
+    .receipt-box{
+        padding:30px 20px;
+    }
+
+    .receipt-row{
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .receipt-row strong{
+        text-align:left;
+    }
+
+}
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #receiptPage,
+    #receiptPage *{
+        visibility:visible;
+    }
+
+    #receiptPage{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:white;
+    }
+
+    .receipt-box{
+        color:black;
+        box-shadow:none;
+    }
+
+    .receipt-buttons{
+        display:none;
+    }
+
+}
